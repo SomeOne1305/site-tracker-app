@@ -414,7 +414,7 @@ function ChartSection({
    Top pages table
 ───────────────────────────────────────── */
 function TopPages({ pages }: { pages: TopPage[] }) {
-	const max = pages[0]?.pageviews || 1
+	const max = pages?.[0]?.pageviews || 1
 
 	return (
 		<div
