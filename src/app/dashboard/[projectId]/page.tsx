@@ -448,11 +448,11 @@ function TopPages({ pages }: { pages: TopPage[] }) {
 						color: '#3d4f6a',
 					}}
 				>
-					{pages.length} paths
+					{pages?.length} paths
 				</span>
 			</div>
 
-			{pages.length === 0 ? (
+			{pages?.length === 0 ? (
 				<div
 					className='flex flex-col items-center justify-center'
 					style={{ padding: '48px 24px', gap: 8 }}
