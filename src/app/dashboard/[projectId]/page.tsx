@@ -223,7 +223,7 @@ function ChartSection({
 	const [range, setRange] = useState<'7d' | '12m'>('7d')
 
 	const active = range === '7d' ? daily : monthly
-	const chartData = active.data_points.map(d => ({
+	const chartData = active?.data_points?.map(d => ({
 		label: d.label,
 		views: d.value,
 		growth: d.growth ?? 0,
@@ -490,7 +490,7 @@ function TopPages({ pages }: { pages: TopPage[] }) {
 					</div>
 
 					{/* rows */}
-					{pages.map((page, i) => {
+					{pages?.map((page, i) => {
 						const pct = (page.pageviews / max) * 100
 						return (
 							<div
@@ -920,11 +920,11 @@ export default function ProjectPage() {
 
 						{/* ── CHART ── */}
 						<ChartSection
-							daily={data.last_7_days_chart}
-							monthly={data.last_12_months_chart}
+							daily={data?.last_7_days_chart}
+							monthly={data?.last_12_months_chart}
 						/>
 						{/* ── TOP PAGES ── */}
-						<TopPages pages={data.top_5_pages} />
+						<TopPages pages={data?.top_5_pages} />
 					</div>
 				) : null}
 			</div>
